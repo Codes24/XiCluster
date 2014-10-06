@@ -40,12 +40,12 @@ XiClusterを起動すると複数のデーモンが起動し、ノード情報�
 やXiClusterAPI(XiClusterクライアントライブラリ)を利用して分散ファイルに
 アクセスします。
 
-[プログラム]
+[プログラム]  
 xicluster_server：XiCluster制御プログラム（デーモンの起動、停止、状態確認）  
 xicluster_daemon：XiClusterデーモン  
 xicluster_client：XiClusterクライアント  
 
-[ライブラリ]
+[ライブラリ]  
 libxicluster_common.so：共通ライブラリ  
 libxicluster_server.so：サーバ共通ライブラリ  
 libxicluster_client.so：クライアントAPI  
@@ -54,14 +54,14 @@ libxicluster_client.so：クライアントAPI
 ------
 
 (1)インストール  
-$ su -  
-# git clone https://github.com/takakusaki/XiCluster.git  
-# cd XiCluster  
-# make  
-# make install  
+	$ su -  
+	# git clone https://github.com/takakusaki/XiCluster.git  
+	# cd XiCluster  
+	# make  
+	# make install  
 
 (2)設定  
-# vi /usr/local/xicluster/conf/xicluster.conf  
+	# vi /usr/local/xicluster/conf/xicluster.conf  
 
 XiClusterサーバ
 ------
@@ -112,21 +112,21 @@ libxicluster_client.soライブラリをリンクする事でXiClusterへ簡単�
 できます。
 
 [sample.c]  
-#include "xi_client.h"  
-main(int argc, char **argv){  
-      int fd;  
-      char buff[1024];  
-      if ( (fd=xi_open("hogehoge.dat",XI_WRITE)) < 0 ){  
-          exit(1);  
-      }  
-      memset(buff,1,sizeof(buff));  
-      xi_write(fd,buff,sizeof(buff));  
-      xi_close(fd);  
-      exit(0);  
-}  
+	#include "xi_client.h"  
+	main(int argc, char **argv){  
+	      int fd;  
+	      char buff[1024];  
+	      if ( (fd=xi_open("hogehoge.dat",XI_WRITE)) < 0 ){  
+	          exit(1);  
+	      }  
+	      memset(buff,1,sizeof(buff));  
+	      xi_write(fd,buff,sizeof(buff));  
+	      xi_close(fd);  
+	      exit(0);  
+	}  
   
 [コンパイル]  
-$ g++ -I/usr/local/xicluster/src -lssl -lz -lxicluster_common -lxicluster_client sample.c  
+	$ g++ -I/usr/local/xicluster/src -lssl -lz -lxicluster_common -lxicluster_client sample.c  
 
 APIリファレンス
 ------
@@ -143,4 +143,4 @@ int xi_chmod(int mode, char *path);
 int xi_chown(int uid, char *path);  
 int xi_chgrp(int gid, char *path);  
   
-                    - Copyright 2014 Takakusaki.Syouichi -
+                    Copyright 2014 Takakusaki.Syouichi
