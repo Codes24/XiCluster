@@ -3,33 +3,27 @@
 int file_put(char *in_file,char *out_file){
 	int ifd,ofd,ret;
 	char buff[1024];
-	struct stat fbuff;
-
-	if ( stat(in_file,&fbuff) != 0 ){
-		printf("no file (%s)\n",in_file);
-		exit(1);
-	}
 
 	if ( (ifd=open(in_file,O_RDONLY)) < 0 ){
 		printf("open error\n");
 		exit(1);
 	}
 
-	if ( (ofd=xc_open(out_file,XC_WRITE,fbuff.st_size)) < 0 ){
-		printf("open error errno=%d [%s]\n",xc_errno,xc_message);
+	if ( (ofd=xi_open(out_file,XI_WRITE)) < 0 ){
+		printf("open error errno=%d [%s]\n",xi_errno,xi_message);
 		exit(1);
 	}
 
 	while( (ret=read(ifd,buff,sizeof(buff))) > 0 ){
 		printf("read()=%d\n",ret);
-		ret=xc_write(ofd,buff,ret);	
+		ret=xi_write(ofd,buff,ret);	
 		if ( ret < 0 ){
-			printf("write error errno=%d [%s]\n",xc_errno,xc_message);
+			printf("write error errno=%d [%s]\n",xi_errno,xi_message);
 			break;
 		}
 	}
 
-	xc_close(ofd);
+	xi_close(ofd);
 	close(ifd);
 
 	return 0;
@@ -38,15 +32,9 @@ int file_put(char *in_file,char *out_file){
 int file_get(char *in_file,char *out_file){
 	int ifd,ofd,ret;
 	char buff[1024];
-	struct stat fbuff;
 
-	if ( stat(out_file,&fbuff) == 0 ){
-		printf("file exist (%s)\n", out_file);
-		exit(1);
-	}
-
-	if ( (ifd=xc_open(in_file,XC_READ)) < 0 ){
-		printf("open error errno=%d [%s]\n",xc_errno,xc_message);
+	if ( (ifd=xi_open(in_file,XI_READ)) < 0 ){
+		printf("open error errno=%d [%s]\n",xi_errno,xi_message);
 		exit(1);
 	}
 
@@ -56,8 +44,8 @@ int file_get(char *in_file,char *out_file){
 	}
 
 	while( 1 ){
-		ret=xc_read(ifd,buff,sizeof(buff));
-		printf("xc_read()=%d\n",ret);
+		ret=xi_read(ifd,buff,sizeof(buff));
+		printf("xi_read()=%d\n",ret);
 		if ( ret <= 0 ){ break; }
 
 		ret=write(ofd,buff,ret);	
@@ -68,7 +56,7 @@ int file_get(char *in_file,char *out_file){
 	}
 
 	close(ofd);
-	xc_close(ifd);
+	xi_close(ifd);
 
 	return 0;
 }

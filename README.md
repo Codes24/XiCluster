@@ -55,9 +55,10 @@ libxicluster_client.so：クライアントAPI
 
 (1)インストール  
 	$ sudo su -  
-	# git clone https://github.com/takakusaki/XiCluster.git
-	# cd XiCluster/RPMS/x86_64
-	# rpm -ihv XiCluster-0.0-0.x86_64.rpm
+	# git clone https://github.com/takakusaki/XiCluster.git  
+	# cd XiCluster/RPMS/x86_64  
+	# rpm -ihv XiCluster-0.0-0.x86_64.rpm  
+	# ldconfig  
 
 (2)設定  
 	# vi /usr/local/xicluster/conf/xicluster.conf  
@@ -67,6 +68,7 @@ XiClusterサーバ
 xicluster_serverコマンドを利用してデーモン起動、停止、キャッシュ情報情報
 表示等が行えます。
 
+$ su - xicluster
 $ xicluster_server start      ：XiClusterデーモン起動  
 $ xicluster_server stop       ：XiClusterデーモン停止  
 $ xicluster_server status     ：各ノード情報表示  

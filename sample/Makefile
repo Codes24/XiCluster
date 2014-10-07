@@ -3,8 +3,8 @@
 #パス定義
 #########################
 GCC=/usr/bin/g++
-INC_DIR=/usr/local/cdoop/src
-LIB_DIR=/usr/local/cdoop/lib
+INC_DIR=../src
+LIB_DIR=/usr/local/xicluster/lib
 
 #########################
 #フラグ
@@ -26,7 +26,7 @@ all:$(TARGETOUT1)
 	$(GCC) $(CFLAGS) $*.c
 
 $(TARGETOUT1): $(OBJ1)
-	$(GCC) -o $(TARGETOUT1) $(LINKS) -lcdoop_common -lcdoop_client $(OBJ1)
+	$(GCC) -o $(TARGETOUT1) $(LINKS) -lxicluster_common -lxicluster_client $(OBJ1)
 
 clean:
 	rm -f *.o $(TARGETOUT1) core
