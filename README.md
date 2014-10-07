@@ -50,6 +50,12 @@ libxicluster_common.so：共通ライブラリ
 libxicluster_server.so：サーバ共通ライブラリ  
 libxicluster_client.so：クライアントAPI  
 
+[通信ポート]  
+UDP9010 : ノード間のサーバ情報転送  
+TCP9020 : ノード間のメタ・データ転送  
+TCP9030 : クライアント間通信  
+  
+
 インストール方法
 ------
 
@@ -66,9 +72,8 @@ libxicluster_client.so：クライアントAPI
 XiClusterサーバ
 ------
 xicluster_serverコマンドを利用してデーモン起動、停止、キャッシュ情報情報
-表示等が行えます。
+表示等が行えます。デーモンの起動・停止はxiclusterユーザで実行して下さい。
 
-$ su - xicluster
 $ xicluster_server start      ：XiClusterデーモン起動  
 $ xicluster_server stop       ：XiClusterデーモン停止  
 $ xicluster_server status     ：各ノード情報表示  
@@ -77,6 +82,8 @@ $ xicluster_server process    ：自ノード実行中プロセス表示
 $ xicluster_server cache      ：自ノードキャッシュ情報表示  
 $ xicluster_server mem        ：自ノード共有メモリ情報表示  
 $ xicluster_server dump <file>：データファイルのダンプ  
+  
+ログファイルは/usr/local/xicluster/log/YYYYMMDD.logに出力されます。  
 
 XiClusterクライアントコマンド
 ------
