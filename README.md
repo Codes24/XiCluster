@@ -54,11 +54,10 @@ libxicluster_client.so：クライアントAPI
 ------
 
 (1)インストール  
-	$ su -  
-	# git clone https://github.com/takakusaki/XiCluster.git  
-	# cd XiCluster  
-	# make  
-	# make install  
+	$ sudo su -  
+	# git clone https://github.com/takakusaki/XiCluster.git
+	# cd XiCluster/RPMS/x86_64
+	# rpm -ihv XiCluster-0.0-0.x86_64.rpm
 
 (2)設定  
 	# vi /usr/local/xicluster/conf/xicluster.conf  
