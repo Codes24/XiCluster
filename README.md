@@ -63,7 +63,7 @@ TCP9030 : クライアント間通信
 	$ sudo su -  
 	# git clone https://github.com/takakusaki/XiCluster.git  
 	# cd XiCluster/RPMS/x86_64  
-	# rpm -ihv XiCluster-0.0-0.x86_64.rpm  
+	# rpm -ihv xicluster-0.0-0.x86_64.rpm  
 	# ldconfig  
 
 (2)設定  
