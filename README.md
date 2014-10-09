@@ -61,20 +61,24 @@ TCP9030 : クライアント間通信
 ------
 
 (1)インストール  
-	$ sudo su -  
-	# git clone https://github.com/takakusaki/XiCluster.git  
-	# cd XiCluster/RPMS/x86_64  
-	# rpm -ihv xicluster-0.0-0.x86_64.rpm  
-	# ldconfig  
-
+```  
+$ sudo su -  
+# git clone https://github.com/takakusaki/XiCluster.git  
+# cd XiCluster/RPMS/x86_64  
+# rpm -ihv xicluster-0.0-0.x86_64.rpm  
+# ldconfig  
+```  
 (2)設定  
-	# vi /usr/local/xicluster/conf/xicluster.conf  
+```  
+# vi /usr/local/xicluster/conf/xicluster.conf  
+```  
 
 XiClusterサーバ
 ------
 xicluster_serverコマンドを利用してデーモン起動、停止、キャッシュ情報情報
 表示等が行えます。デーモンの起動・停止はxiclusterユーザで実行して下さい。
 
+```  
 $ xicluster_server start      ：XiClusterデーモン起動  
 $ xicluster_server stop       ：XiClusterデーモン停止  
 $ xicluster_server status     ：各ノード情報表示  
@@ -83,7 +87,7 @@ $ xicluster_server process    ：自ノード実行中プロセス表示
 $ xicluster_server cache      ：自ノードキャッシュ情報表示  
 $ xicluster_server mem        ：自ノード共有メモリ情報表示  
 $ xicluster_server dump <file>：データファイルのダンプ  
-  
+```    
 ログファイルは/usr/local/xicluster/log/YYYYMMDD.logに出力されます。  
 
 XiClusterクライアントコマンド
@@ -93,6 +97,7 @@ xicluster_clientコマンドを利用してサーバの情報表示や各ノー�
 引数有りで実行するとコマンド実行となります。
   
 [プロンプトモード]  
+```  
 $ xicluster_client  
 XICLUSTER> status  
 XICLUSTER> ls  
@@ -105,13 +110,14 @@ XICLUSTER> chown <OSユーザ名> <パス>
 XICLUSTER> chgrp <OSグループ名> <パス>  
 XICLUSTER> rm <パス>  
 XICLUSTER> exit  
-  
-[コマンド実行]  
+```    
+[コマンド実行] 
+```  
 $ xicluster_client status  
 $ xicluster_client ls <ディレクトリ>  
 $ xicluster_client put <OSファイル名> <XIファイル名>  
 $ xicluster_client get <XIファイル名> <OSファイル名>  
-
+```  
 
 XiClusterrAPIクライアントAPI
 ------
@@ -121,24 +127,28 @@ libxicluster_client.soライブラリをリンクする事でXiClusterへ簡単�
 できます。
 
 [sample.c]  
-    #include "xi_client.h"  
-    main(int argc, char **argv){  
-          int fd;  
-          char buff[1024];  
-          if ( (fd=xi_open("hogehoge.dat",XI_WRITE)) < 0 ){  
-              exit(1);  
-          }  
-          memset(buff,1,sizeof(buff));  
-          xi_write(fd,buff,sizeof(buff));  
-          xi_close(fd);  
-          exit(0);  
-    }  
-  
+```
+#include "xi_client.h"  
+main(int argc, char **argv){  
+      int fd;  
+      char buff[1024];  
+      if ( (fd=xi_open("hogehoge.dat",XI_WRITE)) < 0 ){  
+          exit(1);  
+      }  
+      memset(buff,1,sizeof(buff));  
+      xi_write(fd,buff,sizeof(buff));  
+      xi_close(fd);  
+      exit(0);  
+}  
+```  
 [コンパイル]  
-    $ g++ -I/usr/local/xicluster/src -lssl -lz -lxicluster_common -lxicluster_client sample.c  
+```  
+$ g++ -I/usr/local/xicluster/src -lssl -lz -lxicluster_common -lxicluster_client sample.c  
+```  
 
 APIリファレンス
 ------
+```  
 int xi_open(char *path, int mod);  
 int xi_read(int fd, char *buff, int size);  
 int xi_write(int fd, char *buff, int size);  
@@ -151,5 +161,5 @@ int xi_unlink(char *path);
 int xi_chmod(int mode, char *path);  
 int xi_chown(int uid, char *path);  
 int xi_chgrp(int gid, char *path);  
-  
-                    Copyright 2014 Takakusaki.Syouichi
+```    
+
