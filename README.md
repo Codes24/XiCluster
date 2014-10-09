@@ -10,6 +10,7 @@ XiClusterとは、C言語で開発された分散ファイルシステムと分�
 ・メタ情報とデータのキャッシュ  
 ・ジャーナルログを使ったリカバリ  
 ・マルチマスター
+・データファイルや通信データの自動圧縮
 
 
 動作環境
@@ -120,21 +121,21 @@ libxicluster_client.soライブラリをリンクする事でXiClusterへ簡単�
 できます。
 
 [sample.c]  
-	#include "xi_client.h"  
-	main(int argc, char **argv){  
-	      int fd;  
-	      char buff[1024];  
-	      if ( (fd=xi_open("hogehoge.dat",XI_WRITE)) < 0 ){  
-	          exit(1);  
-	      }  
-	      memset(buff,1,sizeof(buff));  
-	      xi_write(fd,buff,sizeof(buff));  
-	      xi_close(fd);  
-	      exit(0);  
-	}  
+    #include "xi_client.h"  
+    main(int argc, char **argv){  
+          int fd;  
+          char buff[1024];  
+          if ( (fd=xi_open("hogehoge.dat",XI_WRITE)) < 0 ){  
+              exit(1);  
+          }  
+          memset(buff,1,sizeof(buff));  
+          xi_write(fd,buff,sizeof(buff));  
+          xi_close(fd);  
+          exit(0);  
+    }  
   
 [コンパイル]  
-	$ g++ -I/usr/local/xicluster/src -lssl -lz -lxicluster_common -lxicluster_client sample.c  
+    $ g++ -I/usr/local/xicluster/src -lssl -lz -lxicluster_common -lxicluster_client sample.c  
 
 APIリファレンス
 ------
