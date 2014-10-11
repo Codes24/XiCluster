@@ -62,7 +62,7 @@ TCP9030 : クライアント間通信
 
 インストール方法
 ------
-インストール方法は [インストール手順](https://github.com/takakusaki/XiCluster/doc/INSTALL.md)を参照して下さい。
+インストール方法は [インストール手順](https://github.com/takakusaki/XiCluster/blob/master/doc/INSTALL.md)を参照して下さい。
 
 XiClusterサーバ
 ------
