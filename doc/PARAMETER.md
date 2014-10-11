@@ -84,6 +84,6 @@ xicluster_server parameter
 |enospc_retrans         |5000        |セマフォロックのリトライ間隔(ms)|  
 |lock_retry             |100         |キャッシュロック確保リトライ回数|  
 |lock_sleep             |1000000     |キャッシュロックのリトライ間隔(ms)|  
-
+|data_dir               |            |データ出力先のベースディレクトリ。複数指定可能|
 
 
