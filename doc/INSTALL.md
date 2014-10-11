@@ -1,6 +1,6 @@
 ## 動作確認済み環境
 CentOS5.5 32bit/64bit  
-Amazon Linux 64bit  
+Amazon Linux AMI 2014.09 (HVM) - ami-35072834  64bit  
 
 ## 必要なパッケージのインストール
 ```
