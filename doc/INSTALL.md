@@ -20,6 +20,7 @@ ldconfig
 ```
 
 ## XiClusterの設定
+[パラメータ一覧](https://github.com/takakusaki/XiCluster/blob/master/doc/PARAMETER.md)を参考に設定変更を行う。
 ```
 vi /usr/local/xicluster/conf/xicluster.conf  
 ```
