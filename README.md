@@ -112,11 +112,12 @@ $ xicluster_client get <XIファイル名> <OSファイル名>
 
 XiClusterrAPIクライアントAPI
 ------
-XiClusterクライアントAPIを利用して分散ファイルにアクセスする事ができます。
-C言語プログラムでは"xi_client.h"をインクルードし libxicluster_common.so と
-libxicluster_client.soライブラリをリンクする事でXiClusterへ簡単にアクセス
-できます。
-
+XiClusterクライアントAPIを利用して分散ファイルにアクセスする事ができます。  
+C言語標準のファイルIOシステムコールに似た感覚で簡単にプログラミングが行えます。  
+  
+[使い方]  
+"xi_client.h"をインクルードし libxicluster_common.so とlibxicluster_client.soライブラリをリンクする。  
+  
 [sample.c]  
 ```
 #include "xi_client.h"  
