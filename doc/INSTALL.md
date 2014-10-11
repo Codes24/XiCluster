@@ -39,7 +39,7 @@ $xicluster_server stop
 
 ## XiClusterサーバ稼動確認
 ```
-$xicluster_client status  
+$xicluster_server status  
 $ps -ef | grep XICLUSTER  
 $ipcs -a  
 ```
