@@ -62,19 +62,7 @@ TCP9030 : クライアント間通信
 
 インストール方法
 ------
-
-(1)インストール  
-```  
-$ sudo su -  
-# git clone https://github.com/takakusaki/XiCluster.git  
-# cd XiCluster/RPMS/x86_64  
-# rpm -ihv xicluster-0.0-0.x86_64.rpm  
-# ldconfig  
-```  
-(2)設定  
-```  
-# vi /usr/local/xicluster/conf/xicluster.conf  
-```  
+インストール方法は [インストール手順](https://github.com/takakusaki/XiCluster/doc/INSTALL.md)を参照して下さい。
 
 XiClusterサーバ
 ------
