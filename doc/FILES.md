@@ -31,12 +31,12 @@
   
 |ファイル名                                          |説明|
 |----------------------------------------------------|---------------|
-|${BASE}/DATA/**/**/**/********.**************/nn    |データブロック(nn=ブロック通番)|
-|${BASE}/DATA/**/**/**/********.**************/nn.gz |圧縮データブロック(nn=ブロック通番)|
+|${BASE}/DATA/xx/xx/xx/xxxxxxxx.xxxxxxxxxxxxxx/nn    |データブロック(nn=ブロック通番)|
+|${BASE}/DATA/xx/xx/xx/xxxxxxxx.xxxxxxxxxxxxxx/nn.gz |圧縮データブロック(nn=ブロック通番)|
 |${BASE}/IDX/.index                                  |インデックス・リスト|
-|${BASE}/IDX/**/**/**/********.**************        |ブロック格納先情報|
+|${BASE}/IDX/xx/xx/xx/xxxxxxxx.xxxxxxxxxxxxxx        |ブロック格納先情報|
 |${BASE}/META/.index                                 |メタ・リスト|
-|${BASE}/META/**/**/**/********.**************       |メタ・データ|
+|${BASE}/META/xx/xx/xx/xxxxxxxx.xxxxxxxxxxxxxx       |メタ・データ|
 |${BASE}/LOG/YYYYMMDDMM/n-n                          |ジャーナル・ログ(n-nは起動通番と処理通番)|
 
 
