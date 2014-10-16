@@ -1,9 +1,9 @@
 # XiCluster API reference Manual 
 
-## open()
+## xi_open()
   
 **名前**  
-  open - ファイルのオープン、作成を行う。  
+  xi_open - ファイルのオープン、作成を行う。  
   
 **書式**  
   #include "xi_client.h"  
