@@ -35,10 +35,10 @@ XiCluster配布アーカイブに含まれる著作物に対する権利は、�
 
 構成
 ------
-XiClusterを起動すると複数のデーモンが起動し、ノード情報をブロードキャスト
-する事で各ノードを自動認識します。共有メモリをキャッシュとしてTCP/IP通信
-によりメタ情報とデータの同期を行います。ユーザはxicluster_clientコマンド
-やXiClusterAPI(XiClusterクライアントライブラリ)を利用して分散ファイルに
+XiClusterサーバは共有メモリと複数のデーモンから構成されます。
+デーモン共通情報やキャッシュは共有モメモリに確保され、
+各ノード間はTCP/IP通信によりメタ情報とデータの同期を行います。
+ユーザはxicluster_clientコマンドやXiClusterAPI(XiClusterクライアントライブラリ)を利用して分散ファイルシステムに
 アクセスします。
 
 [プログラム]  
@@ -55,9 +55,9 @@ libxicluster_client.so：クライアントAPI
 ```  
 [通信ポート]  
 ```  
-UDP9010 : ノード間のサーバ情報転送  
-TCP9020 : ノード間のメタ・データ転送  
-TCP9030 : クライアント間通信  
+UDP/9010 : ノード間のサーバ情報転送  
+TCP/9020 : ノード間のメタ・データ転送  
+TCP/9030 : クライアント間通信  
 ```    
 
 インストール方法
@@ -112,11 +112,12 @@ $ xicluster_client get <XIファイル名> <OSファイル名>
 
 XiClusterrAPIクライアントAPI
 ------
-XiClusterクライアントAPIを利用して分散ファイルにアクセスする事ができます。
-C言語プログラムでは"xi_client.h"をインクルードし libxicluster_common.so と
-libxicluster_client.soライブラリをリンクする事でXiClusterへ簡単にアクセス
-できます。
-
+XiClusterクライアントAPIを利用して分散ファイルにアクセスする事ができます。  
+C言語標準のファイルIOシステムコールに似た感覚で簡単にプログラミングが行えます。  
+  
+[使い方]  
+"xi_client.h"をインクルードし libxicluster_common.so とlibxicluster_client.soライブラリをリンクする。  
+  
 [sample.c]  
 ```
 #include "xi_client.h"  

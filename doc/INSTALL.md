@@ -1,57 +1,53 @@
-## 導入環境
-EC2 t2.micro ×　3台(全マスタ構成）  
-Amazon Linux 64bit  
+## 動作確認済み環境
+CentOS5.5 32bit/64bit  
+Amazon Linux AMI 2014.09 (HVM) - ami-35072834  64bit  
 
 ## 必要なパッケージのインストール
 ```
-yum install gcc  
-yum install gcc-c++  
-yum install openssl-devel  
-yum install rpm-build    
-yum install git  
+#yum install gcc  
+#yum install gcc-c++  
+#yum install openssl-devel  
+#yum install rpm-build    
+#yum install git  
 ```
 
 ## XiClusterのインストール
 ```
-git clone https://github.com/takakusaki/XiCluster.git  
-cd xicluster/RPMS/x86_64  
-rpm -ihv xicluster-0.0-0.x86_64.rpm  
-ldconfig  
+#git clone https://github.com/takakusaki/XiCluster.git  
+#cd xicluster/RPMS/x86_64  
+#rpm -ihv xicluster-0.0-0.x86_64.rpm  
+#ldconfig  
 ```
 
 ## XiClusterの設定
+[パラメータ一覧](https://github.com/takakusaki/XiCluster/blob/master/doc/PARAMETER.md)を参考に設定変更を行う。
 ```
-vi /usr/local/xicluster/conf/xicluster.conf  
+#vi /usr/local/xicluster/conf/xicluster.conf  
 ```
 
 ## XiCluster起動
 ```
-su - xicluster  
-xicluster_server start  
+#su - xicluster  
+$xicluster_server start  
 ```
 
 ## XiCluster停止
 ```
-su - xicluster  
-xicluster_server stop  
+#su - xicluster  
+$xicluster_server stop  
 ```
 
-## XiCluster稼動確認
+## XiClusterサーバ稼動確認
 ```
-xicluster_client status  
-ps -ef | grep XICLUSTER  
-ipcs -a  
+$xicluster_server status  
+$ps -ef | grep XICLUSTER  
+$ipcs -a  
 ```
 
-## ログファイル
-/usr/local/xicluster/log/YYYYMMDD.log
-
-## 2台目以降のノードを追加する
-(1)１台目のイメージ(AMI)を作成する  
-(2)AMIを利用してEC2を作成する。  
-(3)各ノード間の通信を通す。  
-　　　　UDP/9010　：　ノード情報転送  
-　　　　TCP/9020　：　サーバ間キャッシュ転送  
-　　　　TCP/9030　：　クライアント間通信  
-(4)XiClusterサーバを起動する。  
-
+## XiClusterクライアントからアクセス
+```
+$xicluster_client
+XICLUSTER> status
+XICLUSTER> ls
+XICLUSTER> mkdir hoge
+```
