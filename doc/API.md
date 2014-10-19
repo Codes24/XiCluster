@@ -10,6 +10,7 @@
 [int xi_rename(char *oldpath, char *newpath);](API_rename.md)  
 [int xi_unlink(char *path);](API_unlink.md)  
 [int xi_chmod(char *path, int mode);](API_chmod.md)  
-[int xi_chown(char *path, int uid, int gid);](API_chown.md)  
+[int xi_chown(char *path, int uid);](API_chown.md)  
+[int xi_chgrp(char *path, int int gid);](API_chgrp.md)  
 
 

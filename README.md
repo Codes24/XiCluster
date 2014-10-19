@@ -152,6 +152,7 @@ int xi_rmdir(char *path);
 int xi_rename(char *oldpath, char *newpath);  
 int xi_unlink(char *path);  
 int xi_chmod(char *path, int mode);  
-int xi_chown(char *path, int uid, int gid);  
+int xi_chown(char *path, int uid);  
+int xi_chgrp(char *path, int gid);  
 ```    
 
