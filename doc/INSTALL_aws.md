@@ -19,7 +19,7 @@ Amazon Linux AMI 2014.09 (HVM) - ami-35072834  64bit
 ```
 
 ## XiClusterの設定
-[パラメータ一覧](https://github.com/takakusaki/XiCluster/blob/master/doc/PARAMETER.md)を参考に設定変更を行う。
+[パラメータ一覧](PARAMETER.md)を参考に設定変更を行う。
 ```
 #vi /usr/local/xicluster/conf/xicluster.conf  
 #vi /usr/local/xicluster/conf/server.lst
