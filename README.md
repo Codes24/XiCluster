@@ -140,8 +140,9 @@ $ g++ -I/usr/local/xicluster/src -lssl -lz -lxicluster_common -lxicluster_client
 
 APIリファレンス
 ------
+[APIリファレンス](https://github.com/takakusaki/XiCluster/blob/master/doc/API.md)  
 ```  
-[int xi_open(char *path, int mod);](https://github.com/takakusaki/XiCluster/blob/master/doc/API_open.md)  
+int xi_open(char *path, int mod);
 int xi_read(int fd, char *buff, int size);  
 int xi_write(int fd, char *buff, int size);  
 int xi_close(int fd);  
