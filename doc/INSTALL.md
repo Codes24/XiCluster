@@ -1,53 +1,5 @@
-## 動作確認済み環境
-CentOS5.5 32bit/64bit  
-Amazon Linux AMI 2014.09 (HVM) - ami-35072834  64bit  
+## インストール環境
 
-## 必要なパッケージのインストール
-```
-#yum install gcc  
-#yum install gcc-c++  
-#yum install openssl-devel  
-#yum install rpm-build    
-#yum install git  
-```
+[Amazon Linux AMI 2014.09 (HVM) - ami-35072834  64bit](https://github.com/takakusaki/XiCluster/blob/master/doc/INSTALL_aws.md)   
 
-## XiClusterのインストール
-```
-#git clone https://github.com/takakusaki/XiCluster.git  
-#cd xicluster/RPMS/x86_64  
-#rpm -ihv xicluster-0.0-0.x86_64.rpm  
-#ldconfig  
-```
 
-## XiClusterの設定
-[パラメータ一覧](https://github.com/takakusaki/XiCluster/blob/master/doc/PARAMETER.md)を参考に設定変更を行う。
-```
-#vi /usr/local/xicluster/conf/xicluster.conf  
-```
-
-## XiCluster起動
-```
-#su - xicluster  
-$xicluster_server start  
-```
-
-## XiCluster停止
-```
-#su - xicluster  
-$xicluster_server stop  
-```
-
-## XiClusterサーバ稼動確認
-```
-$xicluster_server status  
-$ps -ef | grep XICLUSTER  
-$ipcs -a  
-```
-
-## XiClusterクライアントからアクセス
-```
-$xicluster_client
-XICLUSTER> status
-XICLUSTER> ls
-XICLUSTER> mkdir hoge
-```
