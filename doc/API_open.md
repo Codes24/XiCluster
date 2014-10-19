@@ -1,4 +1,4 @@
-# XiCluster API reference Manual 
+[XiCluster API reference Manual](https://github.com/takakusaki/XiCluster/blob/master/doc/API.md)  
 
 ## xi_open()
   

@@ -44,7 +44,7 @@ $ps -ef | grep XICLUSTER
 $ipcs -a  
 ```
 
-## XiClusterクライアントからアクセス
+## XiClusterクライアントで動作確認
 ```
 $xicluster_client
 XICLUSTER> status
