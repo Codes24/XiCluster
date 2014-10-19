@@ -1,6 +1,6 @@
 #API一覧
 
-[int xi_open(char *path, int mod);](https://github.com/takakusaki/XiCluster/blob/master/doc/API_open.md)  
+[int xi_open(char *path, int mod);](API_open.md)  
 [int xi_read(int fd, char *buff, int size);](https://github.com/takakusaki/XiCluster/blob/master/doc/API_read.md)  
 [int xi_write(int fd, char *buff, int size);](https://github.com/takakusaki/XiCluster/blob/master/doc/API_write.md)  
 [int xi_close(int fd);](https://github.com/takakusaki/XiCluster/blob/master/doc/API_close.md)  
