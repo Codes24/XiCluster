@@ -13,7 +13,7 @@
 **説明**  
   pathで指定されたファイルの状態を取得して buf へ格納する。  
 
-xi_stat構造体のは以下となります。  
+xi_stat構造体は以下となります。  
 ```
 struct xi_stat {
 unsigned long    st_type;       /* ファイル種類 */
