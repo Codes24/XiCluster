@@ -13,7 +13,7 @@ Amazon Linux AMI 2014.09 (HVM) - ami-35072834  64bit
 ## XiClusterのインストール
 ```
 #git clone https://github.com/takakusaki/XiCluster.git  
-#cd xicluster/RPMS/x86_64  
+#cd XiCluster/RPMS/x86_64  
 #rpm -ihv xicluster-*.*-*.x86_64.rpm  
 #ldconfig  
 ```
