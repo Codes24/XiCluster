@@ -39,6 +39,7 @@ time xicluster_client get /hoge3.dat /mnt1/data/hoge3.dat
 
 ## 検証結果
 |処理|処理時間|user|sys|
+|----|--------|----|----|
 |hadoop(put) 1回目|26.656s|13.233s|3.724s|
 |hadoop(put) 2回目|13.000s|12.417s|2.968s|
 |hadoop(put) 3回目|18.972s|12.601s|3.304s|
