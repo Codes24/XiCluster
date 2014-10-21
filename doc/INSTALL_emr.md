@@ -43,3 +43,10 @@ $ipcs -a
 ```
 詳しくは[実行例](EXEMPLE.md)を参照して下さい。  
 
+## XiClusterクライアントで動作確認
+```
+$xicluster_client status
+XICLUSTER> ls
+XICLUSTER> mkdir hoge
+```
+
