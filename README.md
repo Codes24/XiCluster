@@ -66,8 +66,9 @@ libxicluster_client.so：クライアントAPI
 
 XiClusterサーバ
 ------
-xicluster_serverコマンドを利用してデーモン起動、停止、キャッシュ情報情報
-表示等が行えます。デーモンの起動・停止はxiclusterユーザで実行して下さい。
+xicluster_serverコマンドを利用してデーモン起動、停止、キャッシュ情報情報表示等が行えます。  
+xicluster_serverコマンドは直接共有メモリの情報をダンプ表示するので、デーモン障害時でも原因究明が行えます。  
+デーモンの起動・停止はxiclusterユーザで実行して下さい。  
 
 ```  
 $ xicluster_server start      ：XiClusterデーモン起動  
@@ -83,14 +84,18 @@ $ xicluster_server dump <file>：データファイルのダンプ
 
 XiClusterクライアントコマンド
 ------
-xicluster_clientコマンドを利用してサーバの情報表示や各ノードに分散された
-データのget/putが行えます。引数無しで実行するとプロンプトモードとなり、
-引数有りで実行するとコマンド実行となります。
+xicluster_clientコマンドを利用してサーバの情報表示や各ノードに分散されたデータのget/putが行えます。  
+xicluster_clientはサーバ側のデーモンと通信を行い情報表示を行っています。  
+引数無しで実行するとプロンプトモードとなり、引数有りで実行するとコマンド実行モードとなります。  
   
 [プロンプトモード]  
 ```  
 $ xicluster_client  
 XICLUSTER> status  
+XICLUSTER> parameter
+XICLUSTER> process
+XICLUSTER> cache
+XICLUSTER> mem
 XICLUSTER> ls  
 XICLUSTER> pwd  
 XICLUSTER> cd <ディレクトリ>  
@@ -105,6 +110,11 @@ XICLUSTER> exit
 [コマンド実行] 
 ```  
 $ xicluster_client status  
+$ xicluster_client status  
+$ xicluster_client parameter
+$ xicluster_client process
+$ xicluster_client cache
+$ xicluster_client mem
 $ xicluster_client ls <ディレクトリ>  
 $ xicluster_client put <OSファイル名> <XIファイル名>  
 $ xicluster_client get <XIファイル名> <OSファイル名>  
