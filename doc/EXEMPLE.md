@@ -168,3 +168,48 @@ FilePath                  DeviceName           STS SCN                  Size(MB)
 /usr/local/xicluster/data /dev/xvda            010 20141020:00004:00150     10079      7080      2999  70%  89.9%
 ```
 
+## ディスクアクセス
+
+[プロセス情報表示]  
+```
+$ xicluster_client
+XICLUSTER>pwd
+/
+XICLUSTER>ls
+Total cnt=10 size=5120.0MByte
+drwxr-xr-x - xicluster xicluster          0 2014/10/07 15:34 .
+drwxr-xr-x - xicluster xicluster          0 2014/10/07 15:35 a
+drwxr-xr-x - xicluster xicluster          0 2014/10/11 03:58 hoge
+-rw-r--r-- 1 xicluster xicluster 1073741824 2014/10/21 14:43 hoge1.dat
+-rw-r--r-- 1 xicluster xicluster 1073741824 2014/10/21 14:43 hoge2.dat
+-rw-r--r-- 1 xicluster xicluster 1073741824 2014/10/21 14:44 hoge3.dat
+-rw-r--r-- 1 xicluster xicluster 1073741824 2014/10/21 14:47 hoge4.dat
+-rw-r--r-- 1 xicluster xicluster 1073741824 2014/10/21 14:48 hoge5.dat
+-rw-r--r-- 1 xicluster xicluster       1493 2014/10/21 14:36 sample.c
+drwxr-xr-x - xicluster xicluster          0 2014/10/19 04:08 temp
+XICLUSTER>cd temp
+XICLUSTER>ls
+Total cnt=6 size=138.0MByte
+-rw-r--r-- 1 xicluster xicluster     131072 2014/10/19 04:08 1.txt
+-rw-r--r-- 1 xicluster xicluster    1310720 2014/10/19 04:09 10.txt
+-rw-r--r-- 1 xicluster xicluster   13107200 2014/10/19 04:09 100.txt
+-rw-r--r-- 1 xicluster xicluster  131072000 2014/10/19 04:09 1000.txt
+-rw-r--r-- 1 xicluster xicluster     262144 2014/10/19 04:08 2.txt
+-rw-r--r-- 1 xicluster xicluster     655360 2014/10/19 04:08 5.txt
+XICLUSTER>stat 1000.txt
+[/usr/local/xicluster/data/META/04/A8/23/54433930.5443393004A823]
+     name:1000.txt
+up_dir_id:00000000000000.00000000000000
+   dir_id:5443393004A823.5443393004A823
+  file_id:5443396302B3FD.5443396302B3FD
+     Size:131072000    Blocks:0    IO Block:67108864    regular file
+   Access:(0644/rw-r--r--)  Uid:(11000/xicluster) Gid:(11000/xicluster)
+   Access:2014/10/19 04:09:07.177104
+   Modify:2014/10/19 04:09:09.954373
+   Change:2014/10/19 04:09:07.177104
+
+[/usr/local/xicluster/data/IDX/02/B3/FD/54433963.5443396302B3FD]
+[001] node_id:a06aeca743175c1d6377c2e333f9ffe58f75928  block_no:1 wdt:2014/10/19 04:09:09.949029 size:67108864
+[002] node_id:a06aeca743175c1d6377c2e333f9ffe58f75928  block_no:2 wdt:2014/10/19 04:09:10.838027 size:63963136
+```
+
