@@ -62,7 +62,7 @@ libxicluster_client.so：クライアントAPI
 
 インストール方法
 ------
-インストール方法は [インストール手順](blob/master/doc/INSTALL.md)を参照して下さい。
+インストール方法は [インストール手順](doc/INSTALL.md)を参照して下さい。
 
 XiClusterサーバ
 ------
@@ -140,7 +140,7 @@ $ g++ -I/usr/local/xicluster/src -lssl -lz -lxicluster_common -lxicluster_client
 
 APIリファレンス
 ------
-[APIリファレンス](blob/master/doc/API.md)  
+[APIリファレンス](doc/API.md)  
 ```  
 int xi_open(char *path, int mod);
 int xi_read(int fd, char *buff, int size);  
