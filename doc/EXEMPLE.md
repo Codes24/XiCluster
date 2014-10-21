@@ -14,7 +14,6 @@ $xicluster_server stop
 
 ## XiClusterサーバ稼動確認
 ```
-$xicluster_server status  
 $ps -ef | grep XICLUSTER  
 11000     4320  4256  0 14:41 pts/0    00:00:00 grep XICLUSTER
 11000     4616     1  0 14:15 pts/0    00:00:14 XICLUSTER_000_SMAN
@@ -53,11 +52,11 @@ key        semid      owner      perms      nsems
 ```
 
 ## XiClusterクライアントで動作確認
-$xicluster_client
 
 [ノード情報表示]  
 ```
-XICLUSTER> status
+$xicluster_client status
+
 [cluster information]
 No  F nodename        ipaddress       sts start_tm   SCN                  KA   Max  Busy
 --- - --------------- --------------- --- ---------- -------------------- ---- ---- ----
@@ -68,7 +67,8 @@ No  F nodename        ipaddress       sts start_tm   SCN                  KA   M
 
 [共有メモリ内訳表示]  
 ```
-XICLUSTER>mem
+$xicluster_client mem
+
 [Shared Memory]
 memory header Area       = 1024byte
 system configration Area = 1024byte
@@ -88,7 +88,8 @@ Memory Free Blocks  = 0
 
 [キャッシュ情報表示]  
 ```
-XICLUSTER>cache
+$xicluster_client cache
+
 [META CACHE]
 No   sts         pid      dcnt ncnt write time          FileID
 ---- ----------- -------- ---- ---- ------------------- -----------------------------
@@ -108,7 +109,8 @@ No   sts         pid      size     write time          BlockID
 
 [ディスク情報表示]  
 ```
-XICLUSTER>disk
+$xicluster_client disk
+
 DISK disks=1 devices=1 total=10079MB use=7080MB(70%) free=2998MB
 
 FilePath                  DeviceName           STS SCN                  Size(MB)  Used(MB)  Free(MB)  Use% Busy%
@@ -118,7 +120,8 @@ FilePath                  DeviceName           STS SCN                  Size(MB)
 
 [プロセス情報表示]  
 ```
-XICLUSTER>process
+$xicluster_client process
+
 [process information]
 No  pid   sts start time          REQ IRD fork KA   process name
 --- ----- --- ------------------- --- --- ---- ---- -------------------------
@@ -147,7 +150,8 @@ No  pid   sts start time          REQ IRD fork KA   process name
 
 [パフォーマンス情報表示]  
 ```
-XICLUSTER>perf
+$xicluster_client perf
+
 [performance information]
 
 [CPU]
