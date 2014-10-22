@@ -69,6 +69,7 @@ XiClusterサーバ
 xicluster_serverコマンドを利用してデーモン起動、停止、キャッシュ情報情報表示等が行えます。  
 xicluster_serverコマンドは直接共有メモリの情報をダンプ表示するので、デーモン障害時でも原因究明が行えます。  
 デーモンの起動・停止はxiclusterユーザで実行して下さい。  
+コマンド実行例は [コマンド実行例](doc/EXEMPLE.md)を参照して下さい。  
 
 ```  
 $ xicluster_server start      ：XiClusterデーモン起動  
@@ -87,6 +88,7 @@ XiClusterクライアントコマンド
 xicluster_clientコマンドを利用してサーバの情報表示や各ノードに分散されたデータのget/putが行えます。  
 xicluster_clientはサーバ側のデーモンと通信を行い情報表示を行っています。  
 引数無しで実行するとプロンプトモードとなり、引数有りで実行するとコマンド実行モードとなります。  
+コマンド実行例は [コマンド実行例](doc/EXEMPLE.md)を参照して下さい。  
   
 [プロンプトモード]  
 ```  
@@ -150,7 +152,7 @@ $ g++ -I/usr/local/xicluster/src -lssl -lz -lxicluster_common -lxicluster_client
 
 APIリファレンス
 ------
-[APIリファレンス](doc/API.md)  
+APIリファレンスマニュアルは[APIリファレンス](doc/API.md)を参照して下さい。  
 ```  
 int xi_open(char *path, int mod);
 int xi_read(int fd, char *buff, int size);  
@@ -165,4 +167,8 @@ int xi_chmod(char *path, int mode);
 int xi_chown(char *path, int uid);  
 int xi_chgrp(char *path, int gid);  
 ```    
+
+パフォーマンス
+------
+XiClusterの性能については[パフォーマンス比較](doc/PERFORMANCE.md)を参照して下さい。  
 
