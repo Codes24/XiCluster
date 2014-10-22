@@ -1,5 +1,6 @@
-XiCluster
-======================
+# XiCluster
+
+## 概要
 XiClusterとは、C言語で開発された分散ファイルシステムと分散処理フレームワークで以下機能を提供しています。  
 
 ・ブロック単位のミラーリングとレプリケーション  
@@ -13,13 +14,11 @@ XiClusterとは、C言語で開発された分散ファイルシステムと分�
 ・データファイルや通信データの自動圧縮
 
 
-動作環境
-------
+## 動作環境
 XiClusterは64bit Linux環境で動作します。  
 32bit環境でも動作しますが、最大ファイル数や最大ファイルサイズに制限があります。
 
-ご利用条件
-------
+## ご利用条件
 XiClusterの使用もしくは再配布について、無料でご利用いただけます。  
 
 XiCluster配布アーカイブに含まれる著作物に対する権利は、開発者が保持してお
@@ -33,8 +32,7 @@ XiCluster配布アーカイブに含まれる著作物に対する権利は、�
 益や損害等について、当方は一切の責任をいたしかねますので、ご了承いただきま
 すようお願い申し上げます。
 
-構成
-------
+## 構成
 XiClusterサーバは共有メモリと複数のデーモンから構成されます。
 デーモン共通情報やキャッシュは共有モメモリに確保され、
 各ノード間はTCP/IP通信によりメタ情報とデータの同期を行います。
@@ -53,19 +51,20 @@ libxicluster_common.so：共通ライブラリ
 libxicluster_server.so：サーバ共通ライブラリ  
 libxicluster_client.so：クライアントAPI  
 ```  
-[通信ポート]  
+ファイルの一覧は[ファイル一覧](doc/FILES.md)を参照して下さい。  
+
+## 通信ポート 
+デフォルト通信ポートは以下となります。設定ファイルxicluster.confにて設定変更できます。
 ```  
 9010 : ノード間のサーバ情報転送  
 9020 : ノード間のメタ・データ転送  
 9030 : クライアント間通信  
 ```    
 
-インストール方法
-------
+## インストール方法
 インストール方法は [インストール手順](doc/INSTALL.md)を参照して下さい。
 
-XiClusterサーバ
-------
+## XiClusterサーバ
 xicluster_serverコマンドを利用してデーモン起動、停止、キャッシュ情報情報表示等が行えます。
 xicluster_serverコマンドは直接共有メモリの情報をダンプ表示するので、デーモン障害時でも原因究明が行えます。
 デーモンの起動・停止はxiclusterユーザで実行して下さい。  
@@ -83,8 +82,7 @@ $ xicluster_server dump <file>：データファイルのダンプ
 ```    
 ログファイルは/usr/local/xicluster/log/YYYYMMDD.logに出力されます。  
 
-XiClusterクライアントコマンド
-------
+## XiClusterクライアントコマンド
 xicluster_clientコマンドを利用してサーバの情報表示や各ノードに分散されたデータのget/putが行えます。
 xicluster_clientはサーバ側のデーモンと通信を行い情報表示を行っています。
 引数無しで実行するとプロンプトモードとなり、引数有りで実行するとコマンド実行モードとなります。  
@@ -122,8 +120,7 @@ $ xicluster_client put <OSファイル名> <XIファイル名>
 $ xicluster_client get <XIファイル名> <OSファイル名>  
 ```  
 
-XiClusterrAPIクライアントAPI
-------
+## XiClusterrAPIクライアントAPI
 XiClusterクライアントAPIを利用して分散ファイルにアクセスする事ができます。  
 C言語標準のファイルIOシステムコールに似た感覚で簡単にプログラミングが行えます。  
   
@@ -150,8 +147,7 @@ main(int argc, char **argv){
 $ g++ -I/usr/local/xicluster/src -lssl -lz -lxicluster_common -lxicluster_client sample.c  
 ```  
 
-APIリファレンス
-------
+## APIリファレンス
 APIリファレンスマニュアルは[APIリファレンス](doc/API.md)を参照して下さい。  
 ```  
 int xi_open(char *path, int mod);
@@ -168,7 +164,6 @@ int xi_chown(char *path, int uid);
 int xi_chgrp(char *path, int gid);  
 ```    
 
-パフォーマンス
-------
+## パフォーマンス
 XiClusterの性能については[パフォーマンス比較](doc/PEFORMANCE.md)を参照して下さい。  
 
