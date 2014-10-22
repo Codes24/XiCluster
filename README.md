@@ -170,5 +170,5 @@ int xi_chgrp(char *path, int gid);
 
 パフォーマンス
 ------
-XiClusterの性能については[パフォーマンス比較](doc/PERFORMANCE.md)を参照して下さい。  
+XiClusterの性能については[パフォーマンス比較](doc/PEFORMANCE.md)を参照して下さい。  
 
