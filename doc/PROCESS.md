@@ -5,14 +5,24 @@
 ・ブロックキャッシュをリリース  
 
 ##ノード間通信プロセス(NLSR)
-自ノード情報の転送とノード情報の受信を行う。  
+自ノード情報転送とノード情報の受信を行う。  
+
+設定1) network_prot_svr=UDP  
 ノード情報の転送はUDP通信にてブロードキャストされます。  
+設定2) network_prot_svr=TCP / network_port_svr!=network_port_cache  
+server.lstに登録されたノードに対してTCPでノード情報を転送し、NLSRプロセスが受信を行う。  
+設定3) network_prot_svr=TCP / network_port_svr=network_port_cache  
+server.lstに登録されたノードに対してTCPでノード情報を転送し、CRCVプロセスが受信を行う。  
+
+[ノード情報]  
+```
 ・ネットワーク情報  
 ・プロセス数と状態  
 ・キャッシュ情報  
 ・CPUパフォーマンス情報  
 ・ディスクパフォーマンス情報  
 ・ディスク使用量  
+```
 
 ##クライアント要求受信プロセス(CLSR)
 クライアント要求にを受け付けて、JOBを処理プロセスに割り振る。
