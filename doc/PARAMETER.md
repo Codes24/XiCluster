@@ -62,6 +62,7 @@ xicluster_server parameter
 |rerun_wait             |300         |再起動可能間隔(sec)|  
 |network_if_svr         |eth0        |サーバ間通信で利用するインターフェース|  
 |network_if_clt         |eth0        |クライアント間通信で利用するインターフェース|  
+|network_prot_svr       |TCP         |ノード間データ転送方式(TCP/UDP)|  
 |network_port_svr       |9010        |サーバ間通信で利用するポート番号|  
 |network_port_clt       |9020        |クライアント間通信で利用するポート番号|  
 |network_port_cache     |9030        |キャッシュ転送で利用するポート番号|  
@@ -78,12 +79,12 @@ xicluster_server parameter
 |so_rcvbuf              |131072      |SO_RCVBUFサイズ|  
 |con_sleep_loop         |10          |未使用|  
 |con_compression        |6           |通信データのストリーミング圧縮レベル(0～9)|  
-|pipe_send_timeout      |0           |パイプ送信待ちタイムアウト(ms)|  
-|pipe_recv_timeout      |0           |パイプ受信待ちタイムアウト(ms)|  
+|pipe_send_timeout      |1000000     |パイプ送信待ちタイムアウト(ms)|  
+|pipe_recv_timeout      |1000000     |パイプ受信待ちタイムアウト(ms)|  
 |enospc_retry           |50          |セマフォロック確保リトライ回数|  
 |enospc_retrans         |5000        |セマフォロックのリトライ間隔(ms)|  
 |lock_retry             |100         |キャッシュロック確保リトライ回数|  
 |lock_sleep             |1000000     |キャッシュロックのリトライ間隔(ms)|  
 |data_dir               |            |データ出力先のベースディレクトリ。複数指定可能|
-
+  
 
