@@ -44,9 +44,10 @@ data_dir = /usr/local/xicluster/data
 ```
 
 #セキュリティーグループ設定
-ElasticMapReduce-masterセキュリティグループとElasticMapReduce-slaveセキュリティグループのinboundに通信許可設定を行う。  
+ElasticMapReduce-masterセキュリティグループとElasticMapReduce-slaveセキュリティグループのinboundに通信許可設定を行う。    
+  
 |Type|Protocol|Port Range|Source|
-|----|--------|----------|------|
+|----|---|---|---|
 |Custom TCP Rule|TCP|9020|172.31.29.221/32|
 |Custom TCP Rule|TCP|9020|172.31.18.89/32|
 |Custom TCP Rule|TCP|9020|172.31.18.90/32|
