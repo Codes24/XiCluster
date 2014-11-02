@@ -27,14 +27,14 @@ Amazon Linux AMI 2014.09 (HVM) - ami-35072834  64bit
 
 ## XiCluster起動
 ```
-#su - xicluster  
-$xicluster_server start  
+#su - 
+#service xicluster start  
 ```
 
 ## XiCluster停止
 ```
-#su - xicluster  
-$xicluster_server stop  
+#su -   
+#service xicluster stop
 ```
 
 ## XiClusterサーバ稼動確認

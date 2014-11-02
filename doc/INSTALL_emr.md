@@ -58,14 +58,14 @@ ElasticMapReduce-masterセキュリティグループとElasticMapReduce-slave�
 
 ## XiCluster起動
 ```
-#su - xicluster  
-$xicluster_server start  
+#su - 
+#service xicluster start
 ```
 
 ## XiCluster停止
 ```
-#su - xicluster  
-$xicluster_server stop  
+#su - 
+#service xicluster stop  
 ```
 
 ## XiClusterサーバ稼動確認

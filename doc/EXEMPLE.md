@@ -2,14 +2,14 @@
 
 ## XiCluster起動
 ```
-#su - xicluster  
-$xicluster_server start  
+#su -   
+#service xicluster start  
 ```
 
 ## XiCluster停止
 ```
-#su - xicluster  
-$xicluster_server stop  
+#su -   
+#service xicluster stop  
 ```
 
 ## XiClusterサーバ稼動確認
@@ -64,6 +64,16 @@ No  F nodename        ipaddress       sts start_tm   SCN                  KA   M
 001 S ip-172-31-29-13 172.31.29.135   010 2014/10/20 20141020:00004:00150 1    10   0
 002 S ip-172-31-22-68 172.31.22.68    010 2014/10/20 20141020:00004:00150 1    10   0
 ```
+|F|M=マスターノード/S=スレーブノード/空=データノード|
+|nodename|ノード名|
+|ipaddress|IPアドレス|
+|sts|1=初期化中/2=データ同期中/3=停止中/4=無応答/10=処理中|
+|start_tm|起動日|
+|SCN|システム・チェンジ番号|
+|KA|ノード情報受信時間と自ノード時間の差|
+|Max|最大タスク数|
+|Busy|処理中タスク数|
+
 
 [共有メモリ内訳表示]  
 ```

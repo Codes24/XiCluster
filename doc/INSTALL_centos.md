@@ -27,14 +27,14 @@ RightImage_CentOS_6.5_x64_v14.0_EBS - ami-03793402 64bit
 
 ## XiCluster起動
 ```
-#su - xicluster  
-$xicluster_server start  
+#su - 
+#service xicluster start  
 ```
 
 ## XiCluster停止
 ```
-#su - xicluster  
-$xicluster_server stop  
+#su -   
+#service xicluster stop  
 ```
 
 ## XiClusterサーバ稼動確認

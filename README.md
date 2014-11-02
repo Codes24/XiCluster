@@ -66,15 +66,19 @@ libxicluster_client.so：クライアントAPI
 ## インストール方法
 インストール方法は [インストール手順](doc/INSTALL.md)を参照して下さい。
 
+## 起動／停止  
+```  
+$ su -
+# service xicluster start   :XiCluster起動
+# service xicluster stop    :XiCluster停止
+```  
+
 ## XiClusterサーバ
 xicluster_serverコマンドを利用してデーモン起動、停止、キャッシュ情報情報表示等が行えます。
 xicluster_serverコマンドは直接共有メモリの情報をダンプ表示するので、デーモン障害時でも原因究明が行えます。
-デーモンの起動・停止はxiclusterユーザで実行して下さい。  
 コマンド実行例は [コマンド実行例](doc/EXEMPLE.md)を参照して下さい。  
 
 ```  
-$ xicluster_server start      ：XiClusterデーモン起動  
-$ xicluster_server stop       ：XiClusterデーモン停止  
 $ xicluster_server status     ：各ノード情報表示  
 $ xicluster_server parameter  ：自ノードパラメータ表示  
 $ xicluster_server process    ：自ノード実行中プロセス表示  
@@ -170,7 +174,5 @@ int xi_chgrp(char *path, int gid);
 XiClusterの性能については[パフォーマンス比較](doc/PEFORMANCE.md)を参照して下さい。  
 
 ## NFSマウント  
-
-## MySQLのデータベースエンジン組み込み
 
 
