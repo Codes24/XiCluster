@@ -13,8 +13,6 @@ xicluster_server parameter
 |-----------------------|------------|---|
 |version                |固定        |バージョン|  
 |max_node               |255         |最大ノード数|  
-|version                |固定        |バージョン|  
-|max_node               |255         |最大ノード数|  
 |data_trans_interval    |5           |ノード情報転送間隔(sec)|  
 |dsync_trans_interval   |5           |データ同期間隔(sec)|  
 |disk_mente_interval    |10          |データメンテナンス間隔(sec)|  
