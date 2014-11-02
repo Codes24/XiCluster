@@ -81,6 +81,8 @@ xicluster_server parameter
 |con_compression        |6           |通信データのストリーミング圧縮レベル(0～9)|  
 |pipe_send_timeout      |1000000     |パイプ送信待ちタイムアウト(ms)|  
 |pipe_recv_timeout      |1000000     |パイプ受信待ちタイムアウト(ms)|  
+|mmap_blocks            |1           |mmap()で利用するページ数|  
+|mmap_recv_timeout      |60000000    |mmap()プロセス間通信での受信タイムアウト(ms)|  
 |enospc_retry           |50          |セマフォロック確保リトライ回数|  
 |enospc_retrans         |5000        |セマフォロックのリトライ間隔(ms)|  
 |lock_retry             |100         |キャッシュロック確保リトライ回数|  

@@ -49,18 +49,22 @@
 /* エラー番号 */
 #define XI_ERRNO_PARA				1				/* パラメータ不正 */
 #define XI_ERRNO_PHASE				2				/* フェーズエラー */
+#define XI_ERRNO_BUFF_SMALL			3				/* バッファが少なすぎる */
 #define XI_ERRNO_OPENED				1001			/* オープン済み */
-#define XI_ERRNO_OPEN_PIPE			1002			/* PIPE作成エラー */
 #define XI_ERRNO_OPEN				1003			/* オープンエラー */
 #define XI_ERRNO_UNOPEN				1009			/* 未接続 */
 #define XI_ERRNO_SEND				2001			/* 送信エラー */
 #define XI_ERRNO_SEND_Z				2002			/* 圧縮送信エラー */
 #define XI_ERRNO_RECV				3001			/* 受信エラー */
 #define XI_ERRNO_RECV_Z				3002			/* 圧縮受信エラー */
-#define XI_ERRNO_PIPE				4001			/* PIPE IOエラー */
+#define XI_ERRNO_PIPE_IO			4001			/* PIPE IOエラー */
 #define XI_ERRNO_PIPE_CREATE		4002			/* PIPE作成エラー */
 #define XI_ERRNO_PIPE_READ			4003			/* PIPE読込みエラー */
 #define XI_ERRNO_PIPE_WRITE			4004			/* PIPE書込みエラー */
+#define XI_ERRNO_MMAP_IO			4101			/* MMAP IOエラー */
+#define XI_ERRNO_MMAP_CREATE		4102			/* MMAP作成エラー */
+#define XI_ERRNO_MMAP_READ			4103			/* MMAP読込みエラー */
+#define XI_ERRNO_MMAP_WRITE			4104			/* MMAP書込みエラー */
 #define XI_ERRNO_CLOSED				8001			/* クローズ済み */
 #define XI_ERRNO_CLOSE				8002			/* クローズエラー */
 
@@ -84,6 +88,7 @@ struct timeval st_ctm;   /* 最終状態変更時刻 */
 };
 
 //プロトタイプ宣言
+int xi_set(char *p1, char *p2);
 int xi_set(int typ, int para);
 int xi_set(int typ, char *para);
 int xi_open(char *path, int mod);
