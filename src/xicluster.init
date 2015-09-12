@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# chkconfig: 2345 99 01
+# description: xicluster server initialyze and shutdown
+# processname: xicluster
+#
+
+. /etc/init.d/functions
+
+RETVAL=0
+
+start() {
+    echo -n $"Starting xicluster: "
+    su - xicluster -c "/usr/local/xicluster/bin/xicluster_server start 2>/dev/null 1>&2 &" && success || failure
+    RETVAL=$?
+    echo
+}
+
+stop() {
+    echo -n $"Stopping xicluster: "
+    su - xicluster -c "/usr/local/xicluster/bin/xicluster_server stop 2>/dev/null 1>&2 &" && success || failure
+    RETVAL=$?
+    echo
+}
+
+# See how we were called.
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    reload)
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|status|restart|condrestart|reload}"
+        ;;
+esac
+exit $RETVAL
